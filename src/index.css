@@ -1,0 +1,114 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for mobile */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-first responsive design */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+  overflow-x: hidden;
+}
+
+/* Touch-friendly interactions */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Improved mobile scrolling */
+.mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Mobile-optimized table scrolling */
+.table-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent zoom on input focus for iOS */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Safe area for devices with notches */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Loading animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Mobile-friendly card shadows */
+@media (max-width: 768px) {
+  .card-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (min-width: 769px) {
+  .card-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
